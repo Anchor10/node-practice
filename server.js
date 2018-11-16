@@ -73,12 +73,14 @@ var url = require('url');
 var express = require('express');
 var app = express();
 var fs = require("fs");
-app.get('/listUsers', function (req, res) {
-   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+app.get('/index', function (req, res) {
+   fs.readFile( __dirname + "/" + "practice/index.html", 'utf8', function (err, data) {
        console.log( data );
        res.end( data );
    });
 })
+//静态文件目录，
+app.use('/static',express.static('practice/static'));//将文件设置成静态
 var server = app.listen(8081, function () {
   var host = server.address().address
   var port = server.address().port

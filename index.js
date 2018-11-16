@@ -26,5 +26,5 @@ app.get("/index.html", function(request, response) {
 app.use('/static',express.static('practice/static'));//将文件设置成静态
 
 app.listen(3000, function() {   //监听http://127.0.0.1:3000端口
-    console.log("server start");
+    console.log("server start at port: 3000");
 });
